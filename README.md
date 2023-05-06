@@ -1,6 +1,6 @@
 # sanity-plugin-weighted-array
 
-![image](https://user-images.githubusercontent.com/930712/236621687-cf7630e3-31c4-4884-9d6b-2d37895e5d39.png)
+![Frame 1 (1)](https://user-images.githubusercontent.com/930712/236621989-a549cd5c-1ab4-4056-a473-ccc1ea867fe6.png)
 
 > This is a **Sanity Studio v3** plugin.
 
