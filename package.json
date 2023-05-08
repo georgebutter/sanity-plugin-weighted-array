@@ -37,6 +37,7 @@
     "v2-incompatible.js"
   ],
   "scripts": {
+    "dev": "yarn link-watch",
     "build": "run-s clean && plugin-kit verify-package --silent && pkg-utils build --strict && pkg-utils --strict",
     "clean": "rimraf dist",
     "format": "prettier --write --cache --ignore-unknown .",

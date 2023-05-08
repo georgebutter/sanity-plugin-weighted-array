@@ -6,7 +6,7 @@ import {WeightedArrayInputProps} from '../types'
 import {PatchEvent, set, useFormValue} from 'sanity'
 import {useRanger} from 'react-ranger'
 
-import {getPercentagesFromValues, getValuesFromArray} from '../utils'
+import {getPercentagesFromValues, getValuesFromArray, getValuesFromPercentages} from '../utils'
 import {handleStyle, segmentStyle, trackStyle} from './WeightedArrayInput.styles'
 import {WeightedArrayLabel} from '../WeightArrayLabel/WeightedArrayLabel'
 
@@ -19,8 +19,8 @@ const WeightedArrayInput: React.FC<WeightedArrayInputProps> = function ({
   const {arrayField, labelField} = weightedArrayOptions
   const formValue = useFormValue([])
   const array = get(formValue, arrayField) || []
-  const [percentages, setPercentages] = useState<Array<number>>([100])
-  const [values, setValues] = useState<Array<number>>([])
+  const [percentages, setPercentages] = useState<Array<number>>(value || [100])
+  const [values, setValues] = useState<Array<number>>(getValuesFromPercentages(value || []))
   const {getTrackProps, segments, handles} = useRanger({
     min: 0,
     max: 100,
@@ -40,12 +40,12 @@ const WeightedArrayInput: React.FC<WeightedArrayInputProps> = function ({
 
   useEffect(() => {
     const arr = Array.from({length: array.length - 1})
-    if (arr.length < 1) {
+    if (arr.length < 1 || arr.length === values.length) {
       return
     }
 
     setValues(getValuesFromArray(arr, array))
-  }, [array])
+  }, [array.length, values])
 
   useEffect(() => {
     setPercentages(getPercentagesFromValues(values))

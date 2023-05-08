@@ -4,6 +4,6 @@ export interface WeightedArrayOptions {
   labelField: string
 }
 
-export type WeightedArrayInputProps = ArrayOfPrimitivesInputProps & {
+export type WeightedArrayInputProps = ArrayOfPrimitivesInputProps<number> & {
   weightedArrayOptions: WeightedArrayOptions
 };

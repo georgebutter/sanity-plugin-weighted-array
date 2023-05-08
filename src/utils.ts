@@ -14,6 +14,16 @@ export function getValuesFromArray(arr: any[], array: any[]): number[] {
   return arr.map((_item, index) => (100 / array.length) * (index + 1))
 }
 
+export function getValuesFromPercentages(percentages: number[]): number[] {
+  const vals = percentages.slice(0, -1)
+  const values = vals.map((val, index) => {
+    if (index === 0) {
+      return val
+    }
+    return val + vals[index - 1]
+  })
+  return values
+}
 
 export function getPercentagesFromValues(values: number[]): number[] {
   const vals = [...values, 100]
