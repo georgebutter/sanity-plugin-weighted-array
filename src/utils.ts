@@ -20,7 +20,12 @@ export function getValuesFromPercentages(percentages: number[]): number[] {
     if (index === 0) {
       return val
     }
-    return val + vals[index - 1]
+    return vals.reduce((previous, current, i) => {
+      if (i > index) {
+        return previous
+      }
+      return previous + current
+    })
   })
   return values
 }

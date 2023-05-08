@@ -43,7 +43,6 @@ const WeightedArrayInput: React.FC<WeightedArrayInputProps> = function ({
     if (arr.length < 1 || arr.length === values.length) {
       return
     }
-
     setValues(getValuesFromArray(arr, array))
   }, [array.length, values])
 
