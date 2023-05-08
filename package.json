@@ -34,7 +34,8 @@
     "dist",
     "sanity.json",
     "src",
-    "v2-incompatible.js"
+    "v2-incompatible.js",
+    "README.md"
   ],
   "scripts": {
     "dev": "yarn link-watch",
