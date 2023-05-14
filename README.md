@@ -1,4 +1,5 @@
 # sanity-plugin-weighted-array
+[NPM](https://www.npmjs.com/package/sanity-plugin-weighted-array) - [GitHub](https://github.com/georgebutter/sanity-plugin-weighted-array)
 
 ![ezgif-1-1c277b1c5d](https://user-images.githubusercontent.com/930712/236622038-19b4b16c-8d44-4611-b4de-efbc9b966f60.gif)
 
